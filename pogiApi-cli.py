@@ -14,8 +14,8 @@ except Exception as ex:
 
 # Required Variables
 pogi_url = 'https://sandbox.simplyrfid.com/api' # Enter your Pogi server URL here (default: https://sandbox.simplyrfid.com/api)
-user_id = 'demo-support@simplyrfid.com' # Enter your Pogi user ID here
-user_pwd = 'RlMWNfOG' # Enter your Pogi password here
+user_id = '' # Enter your Pogi user ID here
+user_pwd = '' # Enter your Pogi password here
 
 # Wrapper class to easily find API calls
 class PogiApi:

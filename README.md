@@ -1,3 +1,5 @@
+This Python 3 script - [pogiApi-cli.py](https://github.com/simplyrfid-dev/pogi-api-python3-sample/blob/master/pogiApi-cli.py), demonstrates how to login and retrieved data via Pogi API.
+
 # PogiAPI - Python3
 
 Connecting to PogiAPI via Python3 interpreter using Python's [request library](https://requests.readthedocs.io/en/master/)
@@ -6,8 +8,8 @@ Pogi API enpoints are accessible either via GET or POST requests. The `op` param
 
 | op         | Description |
 | :---:      |:---         |
-|get-version | Returns the current API version |
-|get-token   | Returns the token used for authentication |
+|version     | Returns the current API version |
+|token-get   | Returns the token used for authentication |
 |history     | Search for items |
 |id-get      | Get item by tag-id |
 |id-add      | Create new item  |

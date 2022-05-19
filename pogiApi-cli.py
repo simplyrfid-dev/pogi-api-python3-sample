@@ -55,6 +55,14 @@ class PogiApi:
         return apiResponse
 
     @staticmethod
+    def postIdHistory(token):
+        apiResponse = PogiApi._postRequest({
+            "op": "id-history",
+            "token": token
+            })
+        return apiResponse
+
+    @staticmethod
     def postIdGet(token, tag):
         apiResponse = PogiApi._postRequest({
             "op": "id-get",
@@ -102,12 +110,13 @@ class PogiApi:
 def inputAction():
     print("\n==================================================")
     print("1. Fetch items (id-current)")
-    print("2. Fetch item details (id-get)")
-    print("3. Add item (id-add)")
-    print("4. Update item (id-update)")
-    print("5. Delete item (id-delete)")
+    print("2. Fetch item history (id-history)")
+    print("3. Fetch item details (id-get)")
+    print("4. Add item (id-add)")
+    print("5. Update item (id-update)")
+    print("6. Delete item (id-delete)")
     print("0. Exit")
-    op = input("Enter op: (0-5): ")
+    op = input("Enter op: (0-6): ")
     return op
 
 def displayResponse(apiResponse):
@@ -133,19 +142,22 @@ if __name__ == "__main__":
             apiResponse = PogiApi.postIdCurrent(token)
             displayResponse(apiResponse)
         elif action == "2":
+            apiResponse = PogiApi.postIdHistory(token)
+            displayResponse(apiResponse)
+        elif action == "3":
             tag = input("Enter Tag/RFID: ")
             apiResponse = PogiApi.postIdGet(token, tag)
             displayResponse(apiResponse)
-        elif action == "3":
+        elif action == "4":
             apiResponse = PogiApi.postIdAdd(token)
             displayResponse(apiResponse)
-        elif action == "4":
+        elif action == "5":
             tag = input("Enter Tag/RFID: ")
             field = input("Enter field: ")
             newValue = input("Enter new value: ")
             apiResponse = PogiApi.postIdUpdate(token, tag, field, newValue)
             displayResponse(apiResponse)
-        elif action == "5":
+        elif action == "6":
             tag = input("Enter Tag/RFID: ")
             apiResponse = PogiApi.postIdDelete(token, tag)
             displayResponse(apiResponse)
